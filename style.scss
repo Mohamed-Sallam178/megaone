@@ -1,0 +1,66 @@
+// start customize fixed styles 
+$primary-color: #c32865;
+
+:root {
+  --primary-color: #{$primary-color};
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+// end customize fixed styles 
+
+
+// start customize header 
+header{
+    position: relative;
+}
+nav.nav-bar a {
+    color: #fff;
+    font-size: 16px;
+    padding: 0.5rem 2rem;
+    font-weight: bold;
+}
+a.get-start{
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border: 2px solid var(--primary-color);
+    padding: 1rem 2rem !important;
+    transition: all .3s ease-in-out;
+}
+a.get-start:hover{
+    background-color: transparent;
+    color: var(--primary-color);
+}
+.navigation-toggel {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 1s;
+}
+.navigation-toggel span {
+    display: flex;
+    width: 30px;
+    height: 2.5px;
+    margin-top: 5px;
+    background-color: #fff;
+    transition: all .5s;
+}
+.navigation-toggel:hover span{
+    background-color: var(--primary-color);
+}
+.navigation-toggel:hover span:first-child,
+.navigation-toggel:hover span:last-child{
+    transform: scale(0.6);
+}
+// end customize header 
