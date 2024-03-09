@@ -4,12 +4,13 @@ $primary-color: #c32865;
 :root {
   --primary-color: #{$primary-color};
 }
-
 body{
-    padding: 0;
-    margin: 0;
     background-color: #000;
     font-family: 'Poppins', sans-serif;
+    *{
+        padding: 0;
+        margin: 0;
+    }
 }
 li{
     list-style: none;
@@ -22,11 +23,15 @@ a{
 
 // start customize header 
 header{
-    position: relative;
+    position: sticky;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 10;
 }
 nav.nav-bar a {
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     padding: 0.5rem 2rem;
     font-weight: bold;
 }
@@ -34,12 +39,12 @@ a.get-start{
     background-color: var(--primary-color);
     border-radius: 30px;
     border: 2px solid var(--primary-color);
-    padding: 1rem 2rem !important;
+    padding: 1.2rem 2rem !important;
     transition: all .3s ease-in-out;
-}
-a.get-start:hover{
+&:hover{
     background-color: transparent;
     color: var(--primary-color);
+}
 }
 .navigation-toggel {
     position: absolute;
@@ -47,20 +52,131 @@ a.get-start:hover{
     top: 50%;
     transform: translateY(-50%);
     transition: all 1s;
-}
-.navigation-toggel span {
-    display: flex;
-    width: 30px;
-    height: 2.5px;
-    margin-top: 5px;
-    background-color: #fff;
-    transition: all .5s;
-}
-.navigation-toggel:hover span{
-    background-color: var(--primary-color);
-}
-.navigation-toggel:hover span:first-child,
-.navigation-toggel:hover span:last-child{
-    transform: scale(0.6);
+    & span{
+        display: flex;
+        width: 30px;
+        height: 2.5px;
+        margin-top: 5px;
+        background-color: #fff;
+        transition: all .5s;
+    }
+    &:hover span{
+        background-color: $primary-color !important;
+    }
+    &:hover span:first-child,
+    &:hover span:last-child{
+        transform: scale(.6);
+    }
 }
 // end customize header 
+
+// start customize first section
+.first{
+    margin-top: -91px;
+    background-image: url(images/slider-2.jpg);
+    height: 100vh;
+    background-size: cover;
+    .all-content{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    *{
+        color: #fff;
+        text-align: center;
+    }
+    h2{
+        font-size: 65px;
+        font-weight: bold;
+    }
+    h3{
+        font-size: 60px;
+        margin-bottom: 2rem;
+        span{
+        font-weight: bold;
+        }
+    }
+    p{
+        font-size: 25px;
+        margin-bottom: 4rem;
+    }
+    a.learn{
+        padding: 1.2rem 3.5rem;
+        border: 1px solid;
+        border-radius: 30px;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    .scroll-down{
+        position: absolute;
+        bottom: 20px;
+        font-size: 20px;
+        color: $primary-color;
+        i{
+            color: $primary-color;
+            animation: up-down .8s infinite alternate;
+        }
+    }
+    .social{
+        position: absolute;
+        right: 40px;
+        display: flex;
+        flex-direction: column;
+        i{
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin: 1.5rem 0;
+            border-radius: 50%;
+            line-height: 3;
+            transition: .3s;
+            &:hover{
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media(max-width:767px){
+    
+.first .social{
+    display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes up-down {
+    0%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-2px);
+    }
+}
+
+
