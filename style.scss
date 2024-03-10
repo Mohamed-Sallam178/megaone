@@ -1,12 +1,13 @@
 // start customize fixed styles 
 $primary-color: #c32865;
-
+$second-color:#797979;
 :root {
   --primary-color: #{$primary-color};
+  --second-color:#{$second-color};
 }
 body{
     background-color: #000;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     *{
         padding: 0;
         margin: 0;
@@ -17,6 +18,12 @@ li{
 }
 a{
     text-decoration: none;
+}
+.fix-pad{
+    padding: 7rem 0;
+}
+.fix-mar{
+    margin: 7rem 0;
 }
 // end customize fixed styles 
 
@@ -71,7 +78,7 @@ a.get-start{
 // end customize header 
 
 // start customize first section
-.first{
+.home{
     margin-top: -91px;
     background-image: url(images/slider-2.jpg);
     height: 100vh;
@@ -108,6 +115,11 @@ a.get-start{
         border-radius: 30px;
         font-size: 1.3rem;
         font-weight: bold;
+        transition: all .5s;
+    }
+    a.learn:hover{
+        background-color: $primary-color;
+        border: 1px solid  $primary-color;
     }
     .scroll-down{
         position: absolute;
@@ -139,37 +151,122 @@ a.get-start{
     }
 }
 
+// start customize about section 
+.about{
+    background-image: url(images/about_bg.jpg);
+    .text-left h4{
+        color: $primary-color;
+        font-size: 25px;
+    }
+    .text-left h2{
+        font-size: 60px;
+        color: #fff;
+        font-weight: bold;
+    }
+    .text-right p{
+        color: $second-color;
+        font-size: 22px;
+    }
+    .row-second .box{
+        padding: 2rem;
+        color: #fff;
+        text-align: center;
+        i{
+            font-size: 80px;
+            padding-bottom: 1.5rem;
+        }
+        h5{
+            font-size: 25px;
+        }
+    }
+    .row-four {
+        background-image: url(images/stats-bg.jpg);
+        background-size: cover;
+        height: 900px;
+        .skills{
+            padding-right: 6rem;
+            padding-left: 6rem;
+            p{
+                color: $primary-color;
+                font-size: 30px;
+            }
+            h2{
+                color: #fff;
+                font-size: 60px;
+            }
+            li.custom-prog h6{
+                display: flex;
+                justify-content: space-between;
+                color: #fff;
+                font-size: 22px;
+                margin-bottom: 1rem;
+            }
+            .progress-item {
+                width: 100%;
+                height: 0.6rem;
+                background: #fff;
+                border-radius: 1rem;
+                .fill-item{
+                    background-color: $primary-color;
+                    border-radius: 1rem;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
 
 
 
 
 
 
-
+// start customize media
 @media(max-width:767px){
-    
-.first .social{
-    display: none;
+    header{
+        display: none;
+    }
+    .home{
+        margin: 0;
+        h2 {
+            font-size: 35px !important;
+        }
+        h3 {
+            font-size: 30px !important;
+        }
+        p{
+            font-size: 15px;
+        }
+        a.learn {
+            padding: 0.8rem 2rem;
+            font-size: .9rem;
+        }
+    }
+        .home .social{
+            display: none;
+        }
+        .about .row{
+            text-align: center;
+            .text-left h2 {
+                font-size: 38px;
+            }
+            .text-right p {
+                font-size: 15px;
+            }
+        }
+        .skills{
+            padding-right: 1rem !important;
+            padding-left: 1rem !important;
+            text-align: center;
+        }
 }
-}
+
+// end customize media
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// start customize animation
 @keyframes up-down {
     0%{
         transform: translateY(5px);
@@ -178,5 +275,6 @@ a.get-start{
         transform: translateY(-2px);
     }
 }
+// end customize animation
 
 
