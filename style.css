@@ -32,7 +32,7 @@ header {
   position: sticky;
   left: 0;
   top: 0;
-  background-color: transparent;
+  background-color: #171717;
   z-index: 10;
 }
 
@@ -41,6 +41,11 @@ nav.nav-bar a {
   font-size: 20px;
   padding: 0.5rem 2rem;
   font-weight: bold;
+}
+
+a.nav-item {
+  position: relative;
+  transition: all 1s;
 }
 
 a.get-start {
@@ -204,7 +209,7 @@ a.get-start:hover {
 }
 .about .row-four .skills .progress-item {
   width: 100%;
-  height: 0.6rem;
+  height: 0.5rem;
   background: #fff;
   border-radius: 1rem;
 }
@@ -212,6 +217,85 @@ a.get-start:hover {
   background-color: #c32865;
   border-radius: 1rem;
   height: 100%;
+}
+.about .row-four .carousel-item:before, .about .row-four .carousel-item:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  display: block;
+  background-color: rgba(138, 135, 135, 0.3019607843);
+  transition: all 0.8s;
+}
+.about .row-four .carousel-item:before {
+  left: 0;
+  top: 0;
+}
+.about .row-four .carousel-item:after {
+  right: 0;
+  bottom: 0;
+}
+.about .carousel:hover .carousel-item:before, .about .carousel:hover .carousel-item:after {
+  width: 100%;
+  height: 100%;
+}
+
+.work {
+  background-image: url(images/portfolio_bg.jpg);
+  background-size: cover;
+}
+.work .title-work {
+  text-align: center;
+}
+.work .title-work p {
+  color: #c32865;
+  font-size: 25px;
+}
+.work .title-work h2 {
+  color: #fff;
+  font-size: 65px;
+  font-weight: bold;
+}
+.work .title-work span {
+  font-size: 22px;
+  color: #797979;
+}
+.work .nav-point {
+  display: flex;
+  justify-content: center;
+}
+.work .nav-point .active-link {
+  background-color: #c32865;
+  border-color: #c32865;
+}
+.work .nav-point span {
+  font-size: 25px;
+  color: #fff;
+  padding: 1rem 3rem;
+  border: 1px solid #434343;
+  text-align: center;
+}
+.work .albums .only-photo {
+  border: 2px solid;
+  position: relative;
+}
+.work .albums .only-photo .on-ph {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9607843137);
+  color: #fff;
+  z-index: 2;
+}
+.work .albums .only-photo .on-ph .content-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
 }
 
 @media (max-width: 767px) {
@@ -246,10 +330,32 @@ a.get-start:hover {
   .about .row .text-right p {
     font-size: 15px;
   }
-  .skills {
+  .about .row-four .skills {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
     text-align: center;
+  }
+  .about .row-four .skills p {
+    font-size: 20px;
+  }
+  .about .row-four .skills h2 {
+    font-size: 35px;
+  }
+  .about .row-four .skills li.custom-prog h6 {
+    font-size: 15px;
+  }
+  .work .title-work p {
+    font-size: 18px;
+  }
+  .work .title-work h2 {
+    font-size: 30px;
+  }
+  .work .title-work span {
+    font-size: 15px;
+  }
+  span.nav-link {
+    width: 45% !important;
+    font-size: 18px !important;
   }
 }
 @keyframes up-down {

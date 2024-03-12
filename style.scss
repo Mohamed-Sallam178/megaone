@@ -33,7 +33,7 @@ header{
     position: sticky;
     left: 0;
     top: 0;
-    background-color: transparent;
+    background-color: #171717;
     z-index: 10;
 }
 nav.nav-bar a {
@@ -41,6 +41,10 @@ nav.nav-bar a {
     font-size: 20px;
     padding: 0.5rem 2rem;
     font-weight: bold;
+}
+a.nav-item{
+    position: relative;
+    transition: all 1s;
 }
 a.get-start{
     background-color: var(--primary-color);
@@ -203,7 +207,7 @@ a.get-start{
             }
             .progress-item {
                 width: 100%;
-                height: 0.6rem;
+                height: 0.5rem;
                 background: #fff;
                 border-radius: 1rem;
                 .fill-item{
@@ -214,8 +218,86 @@ a.get-start{
             }
         }
     }
+    .row-four .carousel-item:before,.row-four .carousel-item:after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        display: block;
+        background-color: #8a87874d;
+        transition: all .8s;
+    }
+    .row-four .carousel-item:before{
+        left: 0;
+        top: 0;
+    }
+    .row-four .carousel-item:after{
+        right: 0;
+        bottom: 0;
+    }
+    .carousel:hover .carousel-item:before,.carousel:hover .carousel-item:after{
+        width: 100%;
+        height: 100%;
+    }
 }
-
+// start customize work section
+.work{
+    background-image: url(images/portfolio_bg.jpg);
+    background-size: cover;
+    .title-work{
+        text-align: center;
+    }
+    .title-work p{
+        color: $primary-color;
+        font-size: 25px;
+    }
+    .title-work h2{
+        color: #fff;
+        font-size: 65px;
+        font-weight: bold;
+    }
+    .title-work span{
+        font-size: 22px;
+        color: #797979;
+    }
+    .nav-point {
+        display: flex;
+        justify-content: center;
+        .active-link{
+            background-color: $primary-color;
+            border-color: $primary-color;
+        }
+        span{
+            font-size: 25px;
+            color: #fff;
+            padding: 1rem 3rem;
+            border: 1px solid #434343;
+            text-align: center;
+        }
+    }
+    .albums .only-photo{
+        border: 2px solid;
+        position: relative;
+        .on-ph{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #000000f5;
+            color: #fff;
+            z-index: 2;
+            .content-txt{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+            }
+        }
+    }
+}
 
 
 
@@ -254,10 +336,34 @@ a.get-start{
                 font-size: 15px;
             }
         }
-        .skills{
+        .about .row-four .skills{
             padding-right: 1rem !important;
             padding-left: 1rem !important;
             text-align: center;
+        }
+        .about .row-four .skills p {
+            font-size: 20px;
+        }
+        .about .row-four .skills h2 {
+            font-size: 35px;
+        }
+        .about .row-four .skills li.custom-prog h6 {
+            font-size: 15px;
+        }
+        .work .title-work{
+            p{
+            font-size: 18px;
+            }
+            h2{
+                font-size: 30px;
+            }
+            span{
+                font-size: 15px;
+            }
+        }
+        span.nav-link{
+            width: 45% !important;
+            font-size: 18px !important;
         }
 }
 
