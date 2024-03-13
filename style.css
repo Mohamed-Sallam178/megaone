@@ -28,6 +28,26 @@ a {
   margin: 7rem 0;
 }
 
+.fix-title {
+  text-align: center;
+}
+
+.fix-title p {
+  color: #c32865;
+  font-size: 25px;
+}
+
+.fix-title h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.fix-title span {
+  font-size: 18px;
+  color: #797979;
+}
+
 header {
   position: sticky;
   left: 0;
@@ -244,22 +264,6 @@ a.get-start:hover {
   background-image: url(images/portfolio_bg.jpg);
   background-size: cover;
 }
-.work .title-work {
-  text-align: center;
-}
-.work .title-work p {
-  color: #c32865;
-  font-size: 25px;
-}
-.work .title-work h2 {
-  color: #fff;
-  font-size: 65px;
-  font-weight: bold;
-}
-.work .title-work span {
-  font-size: 22px;
-  color: #797979;
-}
 .work .nav-point {
   display: flex;
   justify-content: center;
@@ -296,6 +300,90 @@ a.get-start:hover {
   width: 100%;
   height: 100%;
   flex-direction: column;
+}
+
+.testemonial {
+  background-image: url(images/parallax-img.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.testemonial .teste-card {
+  text-align: center;
+  color: #fff;
+}
+
+.pricing {
+  background-image: url(images/pricing.jpg);
+  background-size: cover;
+}
+
+.pri-item {
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.pri-item h4 {
+  color: #fff;
+}
+.pri-item .price-para p {
+  color: #797979;
+  transition: all 0.3s;
+}
+.pri-item .pricing-price, .pri-item .type-pri {
+  border-bottom: 1px solid;
+}
+.pri-item .currency sup {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.pri-item .currency p {
+  color: #fff;
+  font-size: 48px;
+  transition: all 0.3s;
+}
+.pri-item .currency span {
+  text-align: center;
+  color: #fff;
+  margin-top: -15px;
+  font-size: 12px;
+}
+.pri-item .pricing-details li {
+  color: #797979;
+  transition: 0.3s;
+}
+.pri-item .pricing-details li i {
+  color: #62be10;
+}
+.pri-item:hover .pricing-details li, .pri-item:hover .price-para p {
+  color: #fff;
+}
+.pri-item:hover .currency p {
+  color: #c32865;
+}
+.pri-item:hover {
+  background-color: #202020;
+}
+.pri-item .pricing-btn button {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  padding: 0.85rem 6rem;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.pri-item .pricing-btn:hover button {
+  background-color: #c32865;
+  border: 1px solid #c32865;
+}
+
+.active-pri {
+  background-color: #202020;
+}
+.active-pri .currency p {
+  color: #c32865;
 }
 
 @media (max-width: 767px) {
@@ -344,18 +432,18 @@ a.get-start:hover {
   .about .row-four .skills li.custom-prog h6 {
     font-size: 15px;
   }
-  .work .title-work p {
-    font-size: 18px;
-  }
-  .work .title-work h2 {
-    font-size: 30px;
-  }
-  .work .title-work span {
-    font-size: 15px;
-  }
   span.nav-link {
     width: 45% !important;
     font-size: 18px !important;
+  }
+  .fix-title p {
+    font-size: 18px;
+  }
+  .fix-title h2 {
+    font-size: 30px;
+  }
+  .fix-title span {
+    font-size: 15px;
   }
 }
 @keyframes up-down {
