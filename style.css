@@ -10,6 +10,7 @@ body {
 body * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 li {
@@ -179,6 +180,11 @@ a.get-start:hover {
 .about .row-second .box i {
   font-size: 80px;
   padding-bottom: 1.5rem;
+  transition: all 0.5s;
+}
+.about .row-second .box:hover i {
+  color: #c32865;
+  transform: translateY(-10px);
 }
 .about .row-second .box h5 {
   font-size: 25px;
@@ -278,6 +284,7 @@ a.get-start:hover {
 .work .albums .only-photo {
   border: 2px solid;
   position: relative;
+  overflow: hidden;
 }
 .work .albums .only-photo .on-ph {
   position: absolute;
@@ -288,6 +295,8 @@ a.get-start:hover {
   background: rgba(0, 0, 0, 0.9607843137);
   color: #fff;
   z-index: 2;
+  transform: translateX(-100%);
+  transition: all 0.5s;
 }
 .work .albums .only-photo .on-ph .content-txt {
   display: flex;
@@ -296,6 +305,43 @@ a.get-start:hover {
   width: 100%;
   height: 100%;
   flex-direction: column;
+}
+.work .albums .only-photo .on-ph i {
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.work .albums .only-photo .on-ph h4 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.work .albums .only-photo .on-ph span {
+  font-size: 1.2rem;
+}
+.work .albums .only-photo:hover .on-ph {
+  transform: translateX(0);
+}
+.work .view-more button {
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  background-color: #c32865;
+  border: 3px solid #c32865;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+}
+.work .view-more:hover button {
+  background-color: transparent;
+  color: #c32865;
+}
+.work .envato {
+  overflow: hidden;
+}
+.work .envato .imgs {
+  justify-content: space-around;
 }
 
 @media (max-width: 767px) {
@@ -317,6 +363,9 @@ a.get-start:hover {
   .home a.learn {
     padding: 0.8rem 2rem;
     font-size: 0.9rem;
+  }
+  .home .scroll-down {
+    bottom: -3px;
   }
   .home .social {
     display: none;

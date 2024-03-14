@@ -11,6 +11,7 @@ body{
     *{
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
     }
 }
 li{
@@ -178,6 +179,11 @@ a.get-start{
         i{
             font-size: 80px;
             padding-bottom: 1.5rem;
+            transition: all .5s;
+        }
+        &:hover i{
+            color: $primary-color;
+            transform: translateY(-10px);
         }
         h5{
             font-size: 25px;
@@ -278,6 +284,7 @@ a.get-start{
     .albums .only-photo{
         border: 2px solid;
         position: relative;
+        overflow: hidden;
         .on-ph{
             position: absolute;
             width: 100%;
@@ -287,6 +294,8 @@ a.get-start{
             background: #000000f5;
             color: #fff;
             z-index: 2;
+            transform: translateX(-100%);
+            transition: all .5s;
             .content-txt{
                 display: flex;
                 justify-content: center;
@@ -295,6 +304,45 @@ a.get-start{
                 height: 100%;
                 flex-direction: column;
             }
+            i{
+                border: 1px solid;
+                border-radius: 50%;
+                padding: 1rem;
+                font-size: 1.5rem;
+                margin-bottom: .5rem;
+            }
+            h4{
+                font-size: 2rem;
+                margin-bottom: .5rem;
+            }
+            span{
+                font-size: 1.2rem;
+            }
+        }
+        &:hover .on-ph{
+            transform: translateX(0);
+        }
+    }
+    .view-more{       
+        button{
+            padding: 1rem 4rem;
+            border-radius: 2rem;
+            background-color: $primary-color;
+            border: 3px solid $primary-color;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all .5s ;
+        }
+        &:hover button{
+           background-color: transparent; 
+           color: $primary-color;
+        } 
+    }
+    .envato{
+        overflow: hidden;
+        .imgs{
+            justify-content: space-around;
         }
     }
 }
@@ -322,6 +370,9 @@ a.get-start{
         a.learn {
             padding: 0.8rem 2rem;
             font-size: .9rem;
+        }
+        .scroll-down{
+            bottom: -3px;
         }
     }
         .home .social{
