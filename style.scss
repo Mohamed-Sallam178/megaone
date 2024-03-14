@@ -120,6 +120,47 @@ a.get-start{
         transform: scale(.6);
     }
 }
+.menu-mob{
+    display: none !important;
+    background-image: url(images/about_bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .row{
+        padding: 100px 0;
+        .main-menu{
+            flex-direction: column;
+            .nav-bar{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .social-header{
+            ul{
+                display: flex;
+                i{
+                    color: #fff;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .copyright-footer{
+            color: #fff;
+            a{
+                color: $primary-color;
+            }
+        }
+    }
+}
+#navigator:checked + .menu-mob{
+    display: block !important;
+}
 // end customize header 
 
 // start customize first section
