@@ -6,6 +6,7 @@ $second-color:#797979;
   --second-color:#{$second-color};
 }
 body{
+    position: relative;
     background-color: #000;
     font-family: 'Roboto', sans-serif;
     *{
@@ -17,7 +18,21 @@ body{
 ::selection {
     color: #fff;
     background: $primary-color;
-  }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+}
 li{
     list-style: none;
 }
@@ -85,7 +100,24 @@ nav.nav-bar a {
 }
 a.nav-item{
     position: relative;
-    transition: all 1s;
+    transition: all 5s;
+}
+a.nav-item:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    /* background: red; */
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    border-bottom: 1px solid $primary-color;
+    transition: all .5s;
+
+}
+a.nav-item:hover:after{
+    width: calc(100% - 4rem);
 }
 a.get-start{
     background-color: var(--primary-color);
@@ -603,6 +635,23 @@ footer{
     }
 }
 // end customize footer
+
+// start customize up 
+.up{
+    position: fixed;
+    right: 20px;
+    bottom: 5%;
+    i{
+        width: 45px;
+        height: 45px;
+        background-color: $primary-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 50%;
+    }
+}
 
 // start customize media
 @media(max-width:767px){
