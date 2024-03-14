@@ -14,6 +14,10 @@ body{
         box-sizing: border-box;
     }
 }
+::selection {
+    color: #fff;
+    background: $primary-color;
+  }
 li{
     list-style: none;
 }
@@ -26,8 +30,44 @@ a{
 .fix-mar{
     margin: 7rem 0;
 }
+.fix-title{
+    text-align: center;
+}
+.fix-title p{
+    color: $primary-color;
+    font-size: 25px;
+}
+.fix-title h2{
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+}
+.fix-title span{
+    font-size: 18px;
+    color: #797979;
+}
+.carousel-item:before,.carousel-item:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    display: block;
+    background-color: #8a87874d;
+    transition: all .8s;
+}
+.carousel-item:before{
+    left: 0;
+    top: 0;
+}
+.carousel-item:after{
+    right: 0;
+    bottom: 0;
+}
+.carousel:hover .carousel-item:before,.carousel:hover .carousel-item:after{
+    width: 100%;
+    height: 100%;
+}
 // end customize fixed styles 
-
 
 // start customize header 
 header{
@@ -79,6 +119,49 @@ a.get-start{
     &:hover span:last-child{
         transform: scale(.6);
     }
+}
+.menu-mob{
+    display: none !important;
+    background-image: url(images/about_bg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: all 1s;
+    .row{
+        padding: 100px 0;
+        .main-menu{
+            flex-direction: column;
+            .nav-bar{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        .social-header{
+            ul{
+                display: flex;
+                i{
+                    color: #fff;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .copyright-footer{
+            color: #fff;
+            a{
+                color: $primary-color;
+            }
+        }
+    }
+}
+#navigator:checked .menu-mob{
+    transform: translateY(0) !important;
 }
 // end customize header 
 
@@ -164,7 +247,7 @@ a.get-start{
         font-size: 25px;
     }
     .text-left h2{
-        font-size: 60px;
+        font-size: 50px;
         color: #fff;
         font-weight: bold;
     }
@@ -224,48 +307,11 @@ a.get-start{
             }
         }
     }
-    .row-four .carousel-item:before,.row-four .carousel-item:after {
-        content: '';
-        width: 0;
-        height: 0;
-        position: absolute;
-        display: block;
-        background-color: #8a87874d;
-        transition: all .8s;
-    }
-    .row-four .carousel-item:before{
-        left: 0;
-        top: 0;
-    }
-    .row-four .carousel-item:after{
-        right: 0;
-        bottom: 0;
-    }
-    .carousel:hover .carousel-item:before,.carousel:hover .carousel-item:after{
-        width: 100%;
-        height: 100%;
-    }
 }
 // start customize work section
 .work{
     background-image: url(images/portfolio_bg.jpg);
     background-size: cover;
-    .title-work{
-        text-align: center;
-    }
-    .title-work p{
-        color: $primary-color;
-        font-size: 25px;
-    }
-    .title-work h2{
-        color: #fff;
-        font-size: 65px;
-        font-weight: bold;
-    }
-    .title-work span{
-        font-size: 22px;
-        color: #797979;
-    }
     .nav-point {
         display: flex;
         justify-content: center;
@@ -347,15 +393,219 @@ a.get-start{
     }
 }
 
+// start customize testemonials
+.testemonial{
+    background-image: url(images/parallax-img.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    .teste-card{
+        text-align: center;
+        color: #fff;
+    }
+}
+// end customize testemonials
 
+// start customize pricing
+.pricing{
+    background-image: url(images/pricing.jpg);
+    background-size: cover;
+} 
+.pri-item{
+    border-radius: 10px;
+    transition: all .3s;
+    h4{
+        color: #fff;
+    }
+    .price-para {
+        p{
+            color: #797979;
+            transition: all .3s;
+        }
+    }
+    .pricing-price,.type-pri{
+        border-bottom: 1px solid;
+    }
+    .currency{
+        sup{
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        p{
+            color: #fff;
+            font-size: 48px;
+            transition: all .3s;
+        }
+        span{
+            text-align: center;
+            color: #fff;
+            margin-top: -15px;
+            font-size: 12px;
+        }
+    }
+    .pricing-details {
+        li{
+            color: #797979;
+            transition: .3s;
+            i{
+                color: #62be10;
+            }
+        }
+    }
+    &:hover .pricing-details li,&:hover .price-para p{
+        color: #fff;
+    }
+    &:hover .currency p{
+        color: $primary-color;
+    }
+    &:hover{
+        background-color: #202020;
+    }
+    .pricing-btn{
+        button{
+            width: 100%;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 2rem;
+            padding: 0.85rem 6rem;
+            font-weight: bold;
+            transition: .5s;
+        }
+        &:hover button{
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+}
+.active-pri{
+    background-color: #202020;
+    .currency p{
+        color: $primary-color;
+    }
+}
+// start customize blog
+.blog{
+    background-image: url(images/blog-bg.jpg);
+    background-size: cover;
+    .blog-text{
+        margin: 0 auto;
+        width: 80%;
+        span{
+            font-size: 20px;    
+            color: $primary-color;
+        }
+        h2{
+            color: #fff;
+            font-size: 45px;
+            font-weight: bold;
+        }
+        p{
+            color: #797979;
+        }
+        button{
+            padding: .75rem 3rem;
+            border-radius: 2rem;
+            border: 2px solid $primary-color;
+            color: #fff;
+            font-weight: bold;
+            background-color: $primary-color;
+            transition: all .3s;
+            &:hover{
+                color: $primary-color;
+                background-color: transparent;
+            }
+        }
+    }
+}
+// end customize blog
 
+// start customize contact
+.contact {
+    background-image: url(images/contact-bg.jpg);
+    background-size: cover;
+    .contact-details{
+        color: #fff;
+        .main-title{
+            color: $primary-color;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .contact-form{
+        input,textarea{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #797979;
+            padding: 5px 0;
+            transition: all .5s;
+            outline: none;
+        }
+        input:focus,textarea:focus{
+            border-bottom: 1px solid $primary-color;
+        }
+        .sub-btn{
+            button{
+                width: 100%;
+                background-color: $primary-color;
+                color: #fff;
+                font-size: 20px;
+                font-weight: bold;
+                border: 2px solid $primary-color;
+                padding: .80rem;
+                border-radius: 2rem;
+                transition: all .3s;
+            }
+            &:hover button{
+                background-color: transparent;
+                border: 2px solid $primary-color;
+                color: $primary-color;
+            }
+        }
+    }
 
+}
+// end customize contact
+
+// start customize footer
+footer{
+    background-image: url(images/footer-bg.jpg);
+    background-size: cover;
+    padding: 60px 0;
+    .social-icons{
+        justify-content: center;
+        align-items: center;
+        li{
+            a{
+                width: 45px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                transition: all .3s;
+            }
+            &:hover a{
+                background-color: $primary-color;
+            }
+            i{
+                color: #fff;
+            }
+        }
+    }
+    .copyright-footer{
+        text-align: center;
+        color: #fff;
+        a{
+            color: $primary-color;
+        }
+    }
+}
+// end customize footer
 
 // start customize media
 @media(max-width:767px){
-    header{
-        display: none;
-    }
     .home{
         margin: 0;
         h2 {
@@ -375,49 +625,105 @@ a.get-start{
             bottom: -3px;
         }
     }
-        .home .social{
-            display: none;
+    .home .social{
+        display: none;
+    }
+    .about .row{
+        text-align: center;
+        .text-left h2 {
+            font-size: 38px;
         }
-        .about .row{
-            text-align: center;
-            .text-left h2 {
-                font-size: 38px;
-            }
-            .text-right p {
-                font-size: 15px;
-            }
-        }
-        .about .row-four .skills{
-            padding-right: 1rem !important;
-            padding-left: 1rem !important;
-            text-align: center;
-        }
-        .about .row-four .skills p {
-            font-size: 20px;
-        }
-        .about .row-four .skills h2 {
-            font-size: 35px;
-        }
-        .about .row-four .skills li.custom-prog h6 {
+        .text-right p {
             font-size: 15px;
         }
-        .work .title-work{
-            p{
-            font-size: 18px;
-            }
-            h2{
-                font-size: 30px;
-            }
-            span{
-                font-size: 15px;
-            }
+    }
+    .about .row-four .skills{
+        padding-right: 1rem !important;
+        padding-left: 1rem !important;
+        text-align: center;
+    }
+    .about .row-four .skills p {
+        font-size: 20px;
+    }
+    .about .row-four .skills h2 {
+        font-size: 35px;
+    }
+    .about .row-four .skills li.custom-prog h6 {
+        font-size: 15px;
+    }
+    span.nav-link{
+        width: 45% !important;
+        font-size: 18px !important;
+    }
+    .fix-title{
+        p{
+        font-size: 18px;
         }
-        span.nav-link{
-            width: 45% !important;
-            font-size: 18px !important;
+        h2{
+            font-size: 30px;
         }
+        span{
+            font-size: 15px;
+        }
+    }
+    .blog{
+        .blog-text{
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0 15px !important;
+        h2{
+            font-size: 25px;
+        }
+        p{
+            font-size: 12px;
+        }
+        }
+    }
+    .contact-details {
+        text-align: center;
+        .phone-box,.support-box{
+            margin-top: 3rem !important;
+        }
+    }
 }
 
+@media(min-width:768px) and (max-width:1200px){
+    .about .text-left h2 {
+        font-size: 40px;
+        color: #fff;
+        font-weight: bold;
+    }
+    .about .row-second .box h5 {
+        font-size: 20px;
+    }
+    .about .row-four .skills{
+        padding: 0 2rem;
+        p {
+            color: #c32865;
+            font-size: 20px;
+        }
+        h2{
+            font-size: 22px;
+        }
+    }
+    .pri-item{
+        .pricing-btn{
+            button{
+                padding: 0.85rem 3rem !important;
+            }
+        }
+
+    }
+    .phone-box,.support-box{
+        margin-top: 3rem !important;
+    }
+}
+
+@media(max-width:1300px){
+header .nav-bar{
+    display: none;
+}
+}
 // end customize media
 
 
