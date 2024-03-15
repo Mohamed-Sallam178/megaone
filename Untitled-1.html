@@ -1,0 +1,92 @@
+                    <div class="view-more text-center">
+                        <button class=" mt-5">View More Portfolio</button>
+                    </div>
+                    <div class="envato mt-5">
+                        <div class="imgs d-flex">
+                            <img src="images/client-1.png" alt="">
+                            <img src="images/client-1.png" alt="">
+                            <img src="images/client-1.png" alt="">
+                            <img src="images/client-1.png" alt="">
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    .albums .only-photo{
+                        border: 2px solid;
+                        position: relative;
+                        overflow: hidden;
+                        .on-ph{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background: #000000f5;
+                            color: #fff;
+                            z-index: 2;
+                            transform: translateX(-100%);
+                            transition: all .5s;
+                            .content-txt{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 100%;
+                                height: 100%;
+                                flex-direction: column;
+                            }
+                            i{
+                                border: 1px solid;
+                                border-radius: 50%;
+                                padding: 1rem;
+                                font-size: 1.5rem;
+                                margin-bottom: .5rem;
+                            }
+                            h4{
+                                font-size: 2rem;
+                                margin-bottom: .5rem;
+                            }
+                            span{
+                                font-size: 1.2rem;
+                            }
+                        }
+                        &:hover .on-ph{
+                            transform: translateX(0);
+                        }
+                    }
+                    .view-more{       
+                        button{
+                            padding: 1rem 4rem;
+                            border-radius: 2rem;
+                            background-color: $primary-color;
+                            border: 3px solid $primary-color;
+                            color: #fff;
+                            font-weight: bold;
+                            font-size: 1.2rem;
+                            transition: all .5s ;
+                        }
+                        &:hover button{
+                           background-color: transparent; 
+                           color: $primary-color;
+                        } 
+                    }
+                    .envato{
+                        overflow: hidden;
+                        .imgs{
+                            justify-content: space-around;
+                        }
+                    }

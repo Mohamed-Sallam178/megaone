@@ -153,7 +153,6 @@ a.get-start{
     }
 }
 .menu-mob{
-    display: none !important;
     background-image: url(images/about_bg.jpg);
     background-size: cover;
     width: 100%;
@@ -192,7 +191,7 @@ a.get-start{
         }
     }
 }
-#navigator:checked .menu-mob{
+input#navigator:checked ~ .menu-mob{
     transform: translateY(0) !important;
 }
 // end customize header 

@@ -173,7 +173,6 @@ a.get-start:hover {
 }
 
 .menu-mob {
-  display: none !important;
   background-image: url(images/about_bg.jpg);
   background-size: cover;
   width: 100%;
@@ -211,7 +210,7 @@ a.get-start:hover {
   color: #c32865;
 }
 
-#navigator:checked .menu-mob {
+input#navigator:checked ~ .menu-mob {
   transform: translateY(0) !important;
 }
 
